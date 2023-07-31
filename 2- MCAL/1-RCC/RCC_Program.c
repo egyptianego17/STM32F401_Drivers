@@ -9,9 +9,9 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
-#include "1-RCC/RCC_Interface.h"
-#include "1-RCC/RCC_Private.h"
-#include "1-RCC/RCC_Config.h"
+#include "RCC_Interface.h"
+#include "RCC_Private.h"
+#include "RCC_Config.h"
 
 /*********************************************************************/
 /* Function Name: RCC_voidInitSysClk                                 */

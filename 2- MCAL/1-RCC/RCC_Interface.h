@@ -5,6 +5,9 @@
 /*              Date: 21 July - 2023                 */
 /*****************************************************/
 
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+
 /* Options for Copy_u8BusId */
 #define AHB1 0
 #define AHB2 1

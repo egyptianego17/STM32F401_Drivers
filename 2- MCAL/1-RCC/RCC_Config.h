@@ -10,7 +10,7 @@
 #define RCC_CONFIG_H
 
 /* Options for Clk Source (HSI - HSE - PLL)                */
-#define RCC_CLK_SRC PLL
+#define RCC_CLK_SRC HSI
 
 /* Options for PLL Source (HSI - HSE)                      */
 #define RCC_PLL_SRC HSI
@@ -21,7 +21,7 @@
 #define RCC_PLLM 8
 
 /* PLLN: REG_Range 192 ≤ PLLN ≤ 432 
-   192≤(PLLN×Fsrc(Mhz)/PLLM)≤432, Max: PLLM × Fsrc(Mhz)    */
+   192≤(PLLN×Fsrc(Mhz)/PLLM)≤432                           */
 #define RCC_PLLN 210
 
 /* PLLP Options: 0: PLLP = 2
