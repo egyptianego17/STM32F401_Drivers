@@ -356,13 +356,13 @@ void GPIO_voidSetPortValue(u8 Copy_u8PortId, u16 Copy_u8PortValue)
         switch (Copy_u8PortId)
         {
             case IOA:
-            	GPIOA->ODR = Copy_u8PortValue;
+                MODIFY_REGISTER_BITS(GPIOA->ODR, PIN0, PIN15,Copy_u8PortValue);
                 break;
             case IOB:
-            	GPIOB->ODR = Copy_u8PortValue;
+                MODIFY_REGISTER_BITS(GPIOB->ODR, PIN0, PIN15,Copy_u8PortValue);
                 break;
             case IOC:
-            	GPIOC->ODR = Copy_u8PortValue;
+                MODIFY_REGISTER_BITS(GPIOC->ODR, PIN0, PIN15,Copy_u8PortValue);
                 break;
             default:
                 break;
@@ -426,25 +426,27 @@ void GPIO_voidDefaultInit()
     /* Set the GPIO mode for all pins of Port A, B, and C to the configured value. */
     GPIOA->MODER = GPIOA_MODE;
     GPIOB->MODER = GPIOB_MODE;
-    GPIOC->MODER = GPIOC_MODE;
+    MODIFY_REGISTER_BITS(GPIOC->MODER, PIN13*2, PIN15*2+1, GPIOC_MODE);
+
 
     /* Set the output speed for all pins of Port A, B, and C to the configured value. */
     GPIOA->OSPEEDR = GPIOA_OUTPUT_SPEED;
     GPIOB->OSPEEDR = GPIOB_OUTPUT_SPEED;
-    GPIOC->OSPEEDR = GPIOC_OUTPUT_SPEED;
+    MODIFY_REGISTER_BITS(GPIOC->OSPEEDR, PIN13*2, PIN15*2+1, GPIOC_OUTPUT_SPEED);
 
     /* Set the pull-up/pull-down configuration for all pins of Port A, B, and C to the configured value. */
     GPIOA->PUDPR = GPIOA_PUPD;
     GPIOB->PUDPR = GPIOB_PUPD;
-    GPIOC->PUDPR = GPIOC_PUPD;
+    MODIFY_REGISTER_BITS(GPIOC->PUDPR, PIN13*2, PIN15*2+1, GPIOC_PUPD);
+
 
     /* Set the output value for all pins of Port A, B, and C to the configured value.   */
-    GPIOA->ODR = GPIOA_OUTPUT_VALUES;
-    GPIOB->ODR = GPIOB_OUTPUT_VALUES;
-    GPIOC->ODR = GPIOC_OUTPUT_VALUES;
+    MODIFY_REGISTER_BITS(GPIOA->ODR, PIN0, PIN15, GPIOA_OUTPUT_VALUES);
+    MODIFY_REGISTER_BITS(GPIOB->ODR, PIN0, PIN15, GPIOB_OUTPUT_VALUES);
+    MODIFY_REGISTER_BITS(GPIOC->ODR, PIN13, PIN15, GPIOC_OUTPUT_VALUES);
 
     /* Set the output type for all pins of Port A, B, and C to the configured value. */
-    GPIOA->OTYPER = GPIOA_OUTPUT_TYPES;
-    GPIOB->OTYPER = GPIOB_OUTPUT_TYPES;
-    GPIOC->OTYPER = GPIOC_OUTPUT_TYPES;
+    MODIFY_REGISTER_BITS(GPIOA->OTYPER, PIN0, PIN15, GPIOA_OUTPUT_TYPES);
+    MODIFY_REGISTER_BITS(GPIOB->OTYPER, PIN0, PIN15, GPIOB_OUTPUT_TYPES);
+    MODIFY_REGISTER_BITS(GPIOC->OTYPER, PIN13, PIN15, GPIOC_OUTPUT_TYPES);
 }

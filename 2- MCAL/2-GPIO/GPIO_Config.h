@@ -49,9 +49,9 @@
 #define GPIOB_MODE_14   OUTPUT
 #define GPIOB_MODE_15   OUTPUT
 
-#define GPIOC_MODE_0    OUTPUT
-#define GPIOC_MODE_1    OUTPUT
-#define GPIOC_MODE_2    OUTPUT
+#define GPIOC_MODE_13   OUTPUT
+#define GPIOC_MODE_14   OUTPUT
+#define GPIOC_MODE_15   OUTPUT
 
 
 /*    Initial Output Value for GPIOA Pins              */
@@ -91,9 +91,9 @@
 #define GPIOB_OUTPUT_VALUE_14   LOW
 #define GPIOB_OUTPUT_VALUE_15   LOW
 
-#define GPIOC_OUTPUT_VALUE_0    LOW
-#define GPIOC_OUTPUT_VALUE_1    LOW
-#define GPIOC_OUTPUT_VALUE_2    LOW
+#define GPIOC_OUTPUT_VALUE_13   LOW
+#define GPIOC_OUTPUT_VALUE_14   LOW
+#define GPIOC_OUTPUT_VALUE_15   LOW
 
 
 /*    Initial Output Type for GPIO Pins                */
@@ -133,9 +133,9 @@
 #define GPIOB_OUTPUT_TYPE_14   OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_15   OUTPUT_PP
 
-#define GPIOC_OUTPUT_TYPE_0    OUTPUT_PP
-#define GPIOC_OUTPUT_TYPE_1    OUTPUT_PP
-#define GPIOC_OUTPUT_TYPE_2    OUTPUT_PP
+#define GPIOC_OUTPUT_TYPE_13   OUTPUT_PP
+#define GPIOC_OUTPUT_TYPE_14   OUTPUT_PP
+#define GPIOC_OUTPUT_TYPE_15   OUTPUT_PP
 
 
 /*    Initial Output Speed for GPIO Pins               */
@@ -176,9 +176,9 @@
 #define GPIOB_OUTPUT_SPEED_14   OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_15   OUTPUT_LS
 
-#define GPIOC_OUTPUT_SPEED_0    OUTPUT_LS
-#define GPIOC_OUTPUT_SPEED_1    OUTPUT_LS
-#define GPIOC_OUTPUT_SPEED_2    OUTPUT_LS
+#define GPIOC_OUTPUT_SPEED_13   OUTPUT_LS
+#define GPIOC_OUTPUT_SPEED_14   OUTPUT_LS
+#define GPIOC_OUTPUT_SPEED_15   OUTPUT_LS
 
 
 /*    Initial Pull-Up/Pull-Down configuration for GPIO Pins  */
@@ -218,8 +218,8 @@
 #define GPIOB_PUPD_14   FLOATING
 #define GPIOB_PUPD_15   FLOATING
 
-#define GPIOC_PUPD_0    FLOATING
-#define GPIOC_PUPD_1    FLOATING
-#define GPIOC_PUPD_2    FLOATING
+#define GPIOC_PUPD_13   FLOATING
+#define GPIOC_PUPD_14   FLOATING
+#define GPIOC_PUPD_15   FLOATING
 
 #endif
