@@ -31,4 +31,16 @@
    PLLN×Fsrc(Mhz)/(PLLM*PLLP) Must not exceed 84 MHz       */
 #define RCC_PLLP 2
 
+/* Options for RCC_AHB_PRESCALER: AHB_PRESCALER_1
+                                  AHB_PRESCALER_2   
+                                  AHB_PRESCALER_4   
+                                  AHB_PRESCALER_8   
+                                  AHB_PRESCALER_16  
+                                  AHB_PRESCALER_64  
+                                  AHB_PRESCALER_128 
+                                  AHB_PRESCALER_256 
+                                  AHB_PRESCALER_512 
+                                                           */
+
+#define RCC_AHB_PRESCALER AHB_PRESCALER_2
 #endif

@@ -1,7 +1,7 @@
 /*****************************************************/
 /*                 SWC: GPIO Driver                  */
 /*            Author: Abdulrahman Omar               */
-/*                 Version: v 1.0                    */
+/*                 Version: v 1.1                    */
 /*              Date: 28 July - 2023                 */
 /*****************************************************/
 
@@ -372,7 +372,7 @@ void GPIO_voidSetPortValue(u8 Copy_u8PortId, u16 Copy_u8PortValue)
 
 
 /*****************************************************************************/
-/* Function Name: GPIO_u8GetPinValue                                        */
+/* Function Name: GPIO_u8GetPinValue                                         */
 /* i/p Arguments: u8 Copy_u8PortId Options (IOA, IOB, IOC)                   */
 /* i/p Arguments: u8 Copy_u8PinId Options (PIN0->PIN15)                      */
 /* Return: u8                                                                */
@@ -424,19 +424,18 @@ u8   GPIO_u8GetPinValue(u8 Copy_u8PortId, u8 Copy_u8PinId)
 void GPIO_voidDefaultInit()
 {
     /* Set the GPIO mode for all pins of Port A, B, and C to the configured value. */
-    GPIOA->MODER = GPIOA_MODE;
-    GPIOB->MODER = GPIOB_MODE;
+    MODIFY_REGISTER_BITS(GPIOA->MODER, PIN0, PIN15, GPIOA_MODE);
+    MODIFY_REGISTER_BITS(GPIOB->MODER, PIN0, PIN15, GPIOB_MODE);
     MODIFY_REGISTER_BITS(GPIOC->MODER, PIN13*2, PIN15*2+1, GPIOC_MODE);
 
-
     /* Set the output speed for all pins of Port A, B, and C to the configured value. */
-    GPIOA->OSPEEDR = GPIOA_OUTPUT_SPEED;
-    GPIOB->OSPEEDR = GPIOB_OUTPUT_SPEED;
+    MODIFY_REGISTER_BITS(GPIOA->OSPEEDR, PIN0, PIN15, GPIOA_MODE);
+    MODIFY_REGISTER_BITS(GPIOB->OSPEEDR, PIN0, PIN15, GPIOB_MODE);
     MODIFY_REGISTER_BITS(GPIOC->OSPEEDR, PIN13*2, PIN15*2+1, GPIOC_OUTPUT_SPEED);
 
     /* Set the pull-up/pull-down configuration for all pins of Port A, B, and C to the configured value. */
-    GPIOA->PUDPR = GPIOA_PUPD;
-    GPIOB->PUDPR = GPIOB_PUPD;
+    MODIFY_REGISTER_BITS(GPIOA->PUDPR, PIN0, PIN15, GPIOA_MODE);
+    MODIFY_REGISTER_BITS(GPIOB->PUDPR, PIN0, PIN15, GPIOB_MODE);
     MODIFY_REGISTER_BITS(GPIOC->PUDPR, PIN13*2, PIN15*2+1, GPIOC_PUPD);
 
 

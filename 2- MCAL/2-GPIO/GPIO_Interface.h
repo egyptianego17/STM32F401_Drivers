@@ -1,9 +1,10 @@
 /*****************************************************/
 /*                 SWC: GPIO Driver                  */
 /*            Author: Abdulrahman Omar               */
-/*                 Version: v 1.0                    */
+/*                 Version: v 1.1                    */
 /*              Date: 28 July - 2023                 */
 /*****************************************************/
+
 
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"

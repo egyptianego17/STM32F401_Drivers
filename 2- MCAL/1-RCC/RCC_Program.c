@@ -30,6 +30,7 @@ void RCC_voidInitSysClk(void)
         /* Select HSI as System Clk Source SW = 0b00 */
         CLR_BIT(RCC_CFGR_Reg, RCC_CFGR_SW0);
         CLR_BIT(RCC_CFGR_Reg, RCC_CFGR_SW1);
+
     #elif (RCC_CLK_SRC == HSE)
         /* Enable HSE */
         SET_BIT(RCC_CR_Reg, RCC_CR_HSEON);
@@ -37,6 +38,7 @@ void RCC_voidInitSysClk(void)
         /* Select HSE as System Clk Source SW = 0b01 */
         SET_BIT(RCC_CFGR_Reg, RCC_CFGR_SW0);
         CLR_BIT(RCC_CFGR_Reg, RCC_CFGR_SW1);
+
     #elif (RCC_CLK_SRC == PLL)
 
         /* Set PLLM Reg */
@@ -64,11 +66,14 @@ void RCC_voidInitSysClk(void)
 
         /* Select PLL as System Clk Source SW = 0b11 */
         SET_BIT(RCC_CFGR_Reg, RCC_CFGR_SW0);
-        SET_BIT(RCC_CFGR_Reg, RCC_CFGR_SW1);        
+        SET_BIT(RCC_CFGR_Reg, RCC_CFGR_SW1);
 
     #else 
         #warning "Wrong Configuration"
     #endif
+
+    /* Set Prescaler */
+    MODIFY_REGISTER_BITS(RCC_CFGR_Reg, RCC_CFGR_HPRE0, RCC_CFGR_HPRE3, RCC_AHB_PRESCALER);
 }
 
 /*********************************************************************/

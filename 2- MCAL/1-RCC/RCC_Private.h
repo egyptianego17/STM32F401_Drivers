@@ -23,6 +23,16 @@
 #define HSE 1
 #define PLL 2
 
+#define AHB_PRESCALER_1   0
+#define AHB_PRESCALER_2   8
+#define AHB_PRESCALER_4   9
+#define AHB_PRESCALER_8   10
+#define AHB_PRESCALER_16  11
+#define AHB_PRESCALER_64  12
+#define AHB_PRESCALER_128 13
+#define AHB_PRESCALER_256 14
+#define AHB_PRESCALER_512 15
+
 /* RCC Control Register Bits */
 #define RCC_CR_HSION        0
 #define RCC_CR_HSIRDY       1

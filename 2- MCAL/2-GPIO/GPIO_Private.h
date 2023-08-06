@@ -1,9 +1,10 @@
 /*****************************************************/
 /*                 SWC: GPIO Driver                  */
 /*            Author: Abdulrahman Omar               */
-/*                 Version: v 1.0                    */
+/*                 Version: v 1.1                    */
 /*              Date: 28 July - 2023                 */
 /*****************************************************/
+
 
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
@@ -36,6 +37,26 @@ typedef struct
 /* Base Address of GPIOC 0x40020800 - 0x40020BFF */
 #define GPIOC       ((GPIO_t*)0x40020800)      /* GPIOC.MODER */
 
+/* Reset values for unconfigurable pins */
+#define GPIOA_MODE_13           ANALOG
+#define GPIOA_MODE_14           INPUT
+#define GPIOB_MODE_11           INPUT
+
+#define GPIOA_OUTPUT_VALUE_13   LOW
+#define GPIOA_OUTPUT_VALUE_14   LOW
+#define GPIOB_OUTPUT_VALUE_11   LOW
+
+#define GPIOA_OUTPUT_TYPE_13    OUTPUT_PP
+#define GPIOA_OUTPUT_TYPE_14    OUTPUT_PP
+#define GPIOB_OUTPUT_TYPE_11    OUTPUT_PP
+
+#define GPIOA_OUTPUT_SPEED_13   OUTPUT_LS
+#define GPIOA_OUTPUT_SPEED_14   OUTPUT_LS
+#define GPIOB_OUTPUT_SPEED_11   OUTPUT_LS
+
+#define GPIOA_PUPD_13           INPUT_PU
+#define GPIOA_PUPD_14           INPUT_PD
+#define GPIOB_PUPD_11           FLOATING
 
 
 /* Functions-like macro to concatenate GPIO mode values */

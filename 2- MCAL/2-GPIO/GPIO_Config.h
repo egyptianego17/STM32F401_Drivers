@@ -1,9 +1,10 @@
 /*****************************************************/
 /*                 SWC: GPIO Driver                  */
 /*            Author: Abdulrahman Omar               */
-/*                 Version: v 1.0                    */
+/*                 Version: v 1.1                    */
 /*              Date: 28 July - 2023                 */
 /*****************************************************/
+
 
 #include "GPIO_Interface.h"
 
@@ -15,43 +16,40 @@
 /*    Initial Mode for GPIO Pins                       */
 /*    Options for Mode (INPUT - OUTPUT - AF - ANALOG)  */
 
-#define GPIOA_MODE_0    OUTPUT
-#define GPIOA_MODE_1    OUTPUT
-#define GPIOA_MODE_2    OUTPUT
-#define GPIOA_MODE_3    OUTPUT
-#define GPIOA_MODE_4    OUTPUT
-#define GPIOA_MODE_5    OUTPUT
-#define GPIOA_MODE_6    OUTPUT
-#define GPIOA_MODE_7    OUTPUT
-#define GPIOA_MODE_8    OUTPUT
-#define GPIOA_MODE_9    OUTPUT
-#define GPIOA_MODE_10   OUTPUT
-#define GPIOA_MODE_11   OUTPUT
-#define GPIOA_MODE_12   OUTPUT
-#define GPIOA_MODE_13   OUTPUT
-#define GPIOA_MODE_14   OUTPUT
-#define GPIOA_MODE_15   OUTPUT
+#define GPIOA_MODE_0    ANALOG
+#define GPIOA_MODE_1    ANALOG
+#define GPIOA_MODE_2    ANALOG
+#define GPIOA_MODE_3    ANALOG
+#define GPIOA_MODE_4    ANALOG
+#define GPIOA_MODE_5    ANALOG
+#define GPIOA_MODE_6    ANALOG
+#define GPIOA_MODE_7    ANALOG
+#define GPIOA_MODE_8    ANALOG
+#define GPIOA_MODE_9    ANALOG
+#define GPIOA_MODE_10   ANALOG
+#define GPIOA_MODE_11   ANALOG
+#define GPIOA_MODE_12   ANALOG
+#define GPIOA_MODE_15   ANALOG
 
-#define GPIOB_MODE_0    OUTPUT
-#define GPIOB_MODE_1    OUTPUT
-#define GPIOB_MODE_2    OUTPUT
-#define GPIOB_MODE_3    OUTPUT
-#define GPIOB_MODE_4    OUTPUT
-#define GPIOB_MODE_5    OUTPUT
-#define GPIOB_MODE_6    OUTPUT
-#define GPIOB_MODE_7    OUTPUT
-#define GPIOB_MODE_8    OUTPUT
-#define GPIOB_MODE_9    OUTPUT
-#define GPIOB_MODE_10   OUTPUT
-#define GPIOB_MODE_11   OUTPUT
-#define GPIOB_MODE_12   OUTPUT
-#define GPIOB_MODE_13   OUTPUT
-#define GPIOB_MODE_14   OUTPUT
-#define GPIOB_MODE_15   OUTPUT
+#define GPIOB_MODE_0    ANALOG
+#define GPIOB_MODE_1    ANALOG
+#define GPIOB_MODE_2    ANALOG
+#define GPIOB_MODE_3    ANALOG
+#define GPIOB_MODE_4    ANALOG
+#define GPIOB_MODE_5    ANALOG
+#define GPIOB_MODE_6    ANALOG
+#define GPIOB_MODE_7    ANALOG
+#define GPIOB_MODE_8    ANALOG
+#define GPIOB_MODE_9    ANALOG
+#define GPIOB_MODE_10   ANALOG
+#define GPIOB_MODE_12   ANALOG
+#define GPIOB_MODE_13   ANALOG
+#define GPIOB_MODE_14   ANALOG
+#define GPIOB_MODE_15   ANALOG
 
-#define GPIOC_MODE_13   OUTPUT
-#define GPIOC_MODE_14   OUTPUT
-#define GPIOC_MODE_15   OUTPUT
+#define GPIOC_MODE_13   ANALOG
+#define GPIOC_MODE_14   ANALOG
+#define GPIOC_MODE_15   ANALOG
 
 
 /*    Initial Output Value for GPIOA Pins              */
@@ -70,8 +68,6 @@
 #define GPIOA_OUTPUT_VALUE_10   LOW
 #define GPIOA_OUTPUT_VALUE_11   LOW
 #define GPIOA_OUTPUT_VALUE_12   LOW
-#define GPIOA_OUTPUT_VALUE_13   LOW
-#define GPIOA_OUTPUT_VALUE_14   LOW
 #define GPIOA_OUTPUT_VALUE_15   LOW
 
 #define GPIOB_OUTPUT_VALUE_0    LOW
@@ -85,7 +81,6 @@
 #define GPIOB_OUTPUT_VALUE_8    LOW
 #define GPIOB_OUTPUT_VALUE_9    LOW
 #define GPIOB_OUTPUT_VALUE_10   LOW
-#define GPIOB_OUTPUT_VALUE_11   LOW
 #define GPIOB_OUTPUT_VALUE_12   LOW
 #define GPIOB_OUTPUT_VALUE_13   LOW
 #define GPIOB_OUTPUT_VALUE_14   LOW
@@ -97,7 +92,7 @@
 
 
 /*    Initial Output Type for GPIO Pins                */
-/*    Options for Output (OUTPUT_PP - OUTPUT_PU)       */
+/*    Options for Output (OUTPUT_PP - OUTPUT_OD)       */
 
 #define GPIOA_OUTPUT_TYPE_0    OUTPUT_PP
 #define GPIOA_OUTPUT_TYPE_1    OUTPUT_PP
@@ -112,8 +107,6 @@
 #define GPIOA_OUTPUT_TYPE_10   OUTPUT_PP
 #define GPIOA_OUTPUT_TYPE_11   OUTPUT_PP
 #define GPIOA_OUTPUT_TYPE_12   OUTPUT_PP
-#define GPIOA_OUTPUT_TYPE_13   OUTPUT_PP
-#define GPIOA_OUTPUT_TYPE_14   OUTPUT_PP
 #define GPIOA_OUTPUT_TYPE_15   OUTPUT_PP
 
 #define GPIOB_OUTPUT_TYPE_0    OUTPUT_PP
@@ -127,7 +120,6 @@
 #define GPIOB_OUTPUT_TYPE_8    OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_9    OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_10   OUTPUT_PP
-#define GPIOB_OUTPUT_TYPE_11   OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_12   OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_13   OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_14   OUTPUT_PP
@@ -155,8 +147,6 @@
 #define GPIOA_OUTPUT_SPEED_10   OUTPUT_LS
 #define GPIOA_OUTPUT_SPEED_11   OUTPUT_LS
 #define GPIOA_OUTPUT_SPEED_12   OUTPUT_LS
-#define GPIOA_OUTPUT_SPEED_13   OUTPUT_LS
-#define GPIOA_OUTPUT_SPEED_14   OUTPUT_LS
 #define GPIOA_OUTPUT_SPEED_15   OUTPUT_LS
 
 #define GPIOB_OUTPUT_SPEED_0    OUTPUT_LS
@@ -170,7 +160,6 @@
 #define GPIOB_OUTPUT_SPEED_8    OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_9    OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_10   OUTPUT_LS
-#define GPIOB_OUTPUT_SPEED_11   OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_12   OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_13   OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_14   OUTPUT_LS
@@ -197,8 +186,6 @@
 #define GPIOA_PUPD_10   FLOATING
 #define GPIOA_PUPD_11   FLOATING
 #define GPIOA_PUPD_12   FLOATING
-#define GPIOA_PUPD_13   FLOATING
-#define GPIOA_PUPD_14   FLOATING
 #define GPIOA_PUPD_15   FLOATING
 
 #define GPIOB_PUPD_0    FLOATING
@@ -212,7 +199,6 @@
 #define GPIOB_PUPD_8    FLOATING
 #define GPIOB_PUPD_9    FLOATING
 #define GPIOB_PUPD_10   FLOATING
-#define GPIOB_PUPD_11   FLOATING
 #define GPIOB_PUPD_12   FLOATING
 #define GPIOB_PUPD_13   FLOATING
 #define GPIOB_PUPD_14   FLOATING
