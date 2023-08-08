@@ -6,8 +6,6 @@
 /*****************************************************/
 
 
-#include "GPIO_Interface.h"
-
 /* File Gaurd */
 #ifndef GPIO_CONFIG_H
 #define GPIO_CONFIG_H
@@ -16,40 +14,39 @@
 /*    Initial Mode for GPIO Pins                       */
 /*    Options for Mode (INPUT - OUTPUT - AF - ANALOG)  */
 
-#define GPIOA_MODE_0    ANALOG
-#define GPIOA_MODE_1    ANALOG
-#define GPIOA_MODE_2    ANALOG
-#define GPIOA_MODE_3    ANALOG
-#define GPIOA_MODE_4    ANALOG
-#define GPIOA_MODE_5    ANALOG
-#define GPIOA_MODE_6    ANALOG
-#define GPIOA_MODE_7    ANALOG
-#define GPIOA_MODE_8    ANALOG
-#define GPIOA_MODE_9    ANALOG
-#define GPIOA_MODE_10   ANALOG
-#define GPIOA_MODE_11   ANALOG
-#define GPIOA_MODE_12   ANALOG
-#define GPIOA_MODE_15   ANALOG
+#define GPIOA_MODE_0    OUTPUT
+#define GPIOA_MODE_1    OUTPUT
+#define GPIOA_MODE_2    OUTPUT
+#define GPIOA_MODE_3    OUTPUT
+#define GPIOA_MODE_4    OUTPUT
+#define GPIOA_MODE_5    OUTPUT
+#define GPIOA_MODE_6    OUTPUT
+#define GPIOA_MODE_7    OUTPUT
+#define GPIOA_MODE_8    OUTPUT
+#define GPIOA_MODE_9    OUTPUT
+#define GPIOA_MODE_10   OUTPUT
+#define GPIOA_MODE_11   OUTPUT
+#define GPIOA_MODE_12   OUTPUT
 
-#define GPIOB_MODE_0    ANALOG
-#define GPIOB_MODE_1    ANALOG
-#define GPIOB_MODE_2    ANALOG
-#define GPIOB_MODE_3    ANALOG
-#define GPIOB_MODE_4    ANALOG
-#define GPIOB_MODE_5    ANALOG
-#define GPIOB_MODE_6    ANALOG
-#define GPIOB_MODE_7    ANALOG
-#define GPIOB_MODE_8    ANALOG
-#define GPIOB_MODE_9    ANALOG
-#define GPIOB_MODE_10   ANALOG
-#define GPIOB_MODE_12   ANALOG
-#define GPIOB_MODE_13   ANALOG
-#define GPIOB_MODE_14   ANALOG
-#define GPIOB_MODE_15   ANALOG
+#define GPIOB_MODE_0    OUTPUT
+#define GPIOB_MODE_1    OUTPUT
+#define GPIOB_MODE_2    OUTPUT
+#define GPIOB_MODE_3    OUTPUT
+#define GPIOB_MODE_4    OUTPUT
+#define GPIOB_MODE_5    OUTPUT
+#define GPIOB_MODE_6    OUTPUT
+#define GPIOB_MODE_7    OUTPUT
+#define GPIOB_MODE_8    OUTPUT
+#define GPIOB_MODE_9    OUTPUT
+#define GPIOB_MODE_10   OUTPUT
+#define GPIOB_MODE_12   OUTPUT
+#define GPIOB_MODE_13   OUTPUT
+#define GPIOB_MODE_14   OUTPUT
+#define GPIOB_MODE_15   OUTPUT
 
-#define GPIOC_MODE_13   ANALOG
-#define GPIOC_MODE_14   ANALOG
-#define GPIOC_MODE_15   ANALOG
+#define GPIOC_MODE_13   OUTPUT
+#define GPIOC_MODE_14   OUTPUT
+#define GPIOC_MODE_15   OUTPUT
 
 
 /*    Initial Output Value for GPIOA Pins              */
@@ -68,7 +65,6 @@
 #define GPIOA_OUTPUT_VALUE_10   LOW
 #define GPIOA_OUTPUT_VALUE_11   LOW
 #define GPIOA_OUTPUT_VALUE_12   LOW
-#define GPIOA_OUTPUT_VALUE_15   LOW
 
 #define GPIOB_OUTPUT_VALUE_0    LOW
 #define GPIOB_OUTPUT_VALUE_1    LOW
@@ -107,7 +103,6 @@
 #define GPIOA_OUTPUT_TYPE_10   OUTPUT_PP
 #define GPIOA_OUTPUT_TYPE_11   OUTPUT_PP
 #define GPIOA_OUTPUT_TYPE_12   OUTPUT_PP
-#define GPIOA_OUTPUT_TYPE_15   OUTPUT_PP
 
 #define GPIOB_OUTPUT_TYPE_0    OUTPUT_PP
 #define GPIOB_OUTPUT_TYPE_1    OUTPUT_PP
@@ -147,7 +142,6 @@
 #define GPIOA_OUTPUT_SPEED_10   OUTPUT_LS
 #define GPIOA_OUTPUT_SPEED_11   OUTPUT_LS
 #define GPIOA_OUTPUT_SPEED_12   OUTPUT_LS
-#define GPIOA_OUTPUT_SPEED_15   OUTPUT_LS
 
 #define GPIOB_OUTPUT_SPEED_0    OUTPUT_LS
 #define GPIOB_OUTPUT_SPEED_1    OUTPUT_LS
@@ -186,7 +180,6 @@
 #define GPIOA_PUPD_10   FLOATING
 #define GPIOA_PUPD_11   FLOATING
 #define GPIOA_PUPD_12   FLOATING
-#define GPIOA_PUPD_15   FLOATING
 
 #define GPIOB_PUPD_0    FLOATING
 #define GPIOB_PUPD_1    FLOATING
@@ -207,5 +200,43 @@
 #define GPIOC_PUPD_13   FLOATING
 #define GPIOC_PUPD_14   FLOATING
 #define GPIOC_PUPD_15   FLOATING
+
+
+/*  Macros for Alternate Function Low (AFRL) and High (AFRH) Registers */
+/*  Options for alternative functions (AF0 - AF15)                     */
+
+#define GPIOA_AFRL_0    AF0
+#define GPIOA_AFRL_1    AF0
+#define GPIOA_AFRL_2    AF0
+#define GPIOA_AFRL_3    AF0
+#define GPIOA_AFRL_4    AF0
+#define GPIOA_AFRL_5    AF0
+#define GPIOA_AFRL_6    AF8
+#define GPIOA_AFRL_7    AF10
+#define GPIOA_AFRH_8    AF0
+#define GPIOA_AFRH_9    AF0
+#define GPIOA_AFRH_10   AF0
+#define GPIOA_AFRH_11   AF0
+#define GPIOA_AFRH_12   AF0
+
+#define GPIOB_AFRL_0    AF0
+#define GPIOB_AFRL_1    AF0
+#define GPIOB_AFRL_2    AF0
+#define GPIOB_AFRL_3    AF0
+#define GPIOB_AFRL_4    AF0
+#define GPIOB_AFRL_5    AF0
+#define GPIOB_AFRL_6    AF0
+#define GPIOB_AFRL_7    AF0
+#define GPIOB_AFRH_8    AF0
+#define GPIOB_AFRH_9    AF8
+#define GPIOB_AFRH_10   AF2
+#define GPIOB_AFRH_12   AF0
+#define GPIOB_AFRH_13   AF0
+#define GPIOB_AFRH_14   AF0
+#define GPIOB_AFRH_15   AF0
+
+#define GPIOC_AFRH_13   AF0
+#define GPIOC_AFRH_14   AF0
+#define GPIOC_AFRH_15   AF0
 
 #endif
