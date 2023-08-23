@@ -5,6 +5,7 @@
 /*              Date: 4 August - 2023                */
 /*****************************************************/
 
+#include "SysTick_Config.h"
 
 /* File Gaurd */
 #ifndef SYSTICK_PRIVATE_H

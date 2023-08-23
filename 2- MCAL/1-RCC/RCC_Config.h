@@ -42,5 +42,22 @@
                                   AHB_PRESCALER_512 
                                                            */
 
-#define RCC_AHB_PRESCALER AHB_PRESCALER_2
+#define RCC_AHB_PRESCALER AHB_PRESCALER_1
+
+/* Options for RCC_CLK_SRC */
+#define HSI 0
+#define HSE 1
+#define PLL 2
+
+/* Options for Init RCC_AHB_PRESCALER */
+#define AHB_PRESCALER_1   0
+#define AHB_PRESCALER_2   8
+#define AHB_PRESCALER_4   9
+#define AHB_PRESCALER_8   10
+#define AHB_PRESCALER_16  11
+#define AHB_PRESCALER_64  12
+#define AHB_PRESCALER_128 13
+#define AHB_PRESCALER_256 14
+#define AHB_PRESCALER_512 15
+
 #endif

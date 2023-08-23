@@ -11,5 +11,7 @@
         u32 bitmask = ((1U << ((END_BIT) - (START_BIT) + 1)) - 1) << (START_BIT); \
         (REG) = ((REG) & ~bitmask) | (((VALUE) << (START_BIT)) & bitmask); \
     } while (0)
+    
+#define GET_BITS(VAR, START_BIT, END_BIT) (((VAR) >> (START_BIT)) & ((1 << ((END_BIT) - (START_BIT) + 1)) - 1))
 
 #endif

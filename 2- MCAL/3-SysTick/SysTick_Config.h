@@ -10,11 +10,11 @@
 #define SYSTICK_CONFIG_H
 
 /* Options for SysTick Clk Source (AHB - AHB_DIV_BY_8)             */
-#define STK_CLK_SOURCE          AHB_DIV_BY_8
+#define STK_CLK_SOURCE          AHB
 
 /* AHB Clock Frequency Value
    Note: Max AHB Freq These Delay Functions Can Handle is 16Mhz    */
-#define AHB_CLK_VALUE           8000000
+#define AHB_CLK_VALUE           16000000
 
 
 #endif

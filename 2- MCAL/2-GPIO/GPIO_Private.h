@@ -26,18 +26,16 @@ typedef struct
     volatile u32 LCKR;
     volatile u32 AFRL;
     volatile u32 AFRH;
-} GPIO_t;
-
-/* #define GPIOA     ((GPIO_t*)0x40020000)     GPIOA->MODER, Important: It's time to search :( */ 
+} GPIO_R;
 
 /* Base Address of GPIOA 0x40020000 - 0x400203FF */
-#define GPIOA       ((GPIO_t*)0x40020000)      /* GPIOA.MODER */
+#define GPIOA       ((GPIO_R*)0x40020000)      
 
 /* Base Address of GPIOB 0x40020400 - 0x400207FF */
-#define GPIOB       ((GPIO_t*)0x40020400)      /* GPIOB.MODER */
+#define GPIOB       ((GPIO_R*)0x40020400)      
 
 /* Base Address of GPIOC 0x40020800 - 0x40020BFF */
-#define GPIOC       ((GPIO_t*)0x40020800)      /* GPIOC.MODER */
+#define GPIOC       ((GPIO_R*)0x40020800)     
 
 /* Reset values for unconfigurable pins */
 #define GPIOA_MODE_13           AF
@@ -70,23 +68,6 @@ typedef struct
 #define GPIOA_AFRH_15           AF10
 #define GPIOB_AFRH_11           AF0
 
-/* Define the values for each alternate function */
-#define AF0                     0
-#define AF1                     1
-#define AF2                     2
-#define AF3                     3
-#define AF4                     4
-#define AF5                     5
-#define AF6                     6
-#define AF7                     7
-#define AF8                     8
-#define AF9                     9
-#define AF10                    10
-#define AF11                    11
-#define AF12                    12
-#define AF13                    13
-#define AF14                    14
-#define AF15                    15
 
 /* Functions-like macro to concatenate GPIO mode values */
 #define GPIOA_MODE CONCATENATE_32_BITS(GPIOA_MODE_0, GPIOA_MODE_1, GPIOA_MODE_2, GPIOA_MODE_3, \

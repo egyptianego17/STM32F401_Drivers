@@ -19,10 +19,6 @@
 #define RCC_APB1ENR_Reg      *((volatile u32*)0x40023840)
 #define RCC_APB2ENR_Reg      *((volatile u32*)0x40023844)
 
-#define HSI 0
-#define HSE 1
-#define PLL 2
-
 #define AHB_PRESCALER_1   0
 #define AHB_PRESCALER_2   8
 #define AHB_PRESCALER_4   9

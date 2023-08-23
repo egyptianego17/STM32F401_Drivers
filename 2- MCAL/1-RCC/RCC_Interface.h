@@ -8,11 +8,6 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
-/* Options for Copy_u8BusId */
-#define AHB1 0
-#define AHB2 1
-#define APB1 2
-#define APB2 3
 
 /* File Gaurd */
 #ifndef RCC_INTERFACE_H
@@ -22,6 +17,12 @@
 void RCC_voidInitSysClk(void);
 void RCC_voidEnablePeripheralClk(u8 Copy_u8BusId, u8 Copy_u8PeripheralId);
 void RCC_voidDisablePeripheralClk(u8 Copy_u8BusId, u8 Copy_u8PeripheralId);
+
+/* Options for Copy_u8BusId */
+#define AHB1 0
+#define AHB2 1
+#define APB1 2
+#define APB2 3
 
 /* Options for Copy_u8PeripheralId */
 /* AHB1 */
