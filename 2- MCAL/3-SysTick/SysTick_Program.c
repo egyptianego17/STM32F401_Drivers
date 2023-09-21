@@ -152,7 +152,7 @@ void STK_voidDelay_ms(u32 Copy_u32Time)
 /*              interval elapses.                                            */
 /*****************************************************************************/
 
-void STK_voidSetIntervalSingle(u32 Copy_u32Time, void (LpF)(void))
+void STK_voidSetIntervalSingle(u32 Copy_u32Time, void (*LpF)(void))
 {
     /* Set Load Value */
     STK_LOAD_Reg = Copy_u32Time;
@@ -182,7 +182,7 @@ void STK_voidSetIntervalSingle(u32 Copy_u32Time, void (LpF)(void))
 /*              interval elapses.                                            */
 /*****************************************************************************/
 
-void STK_voidSetIntervalPeriodic(u32 Copy_u32Time, void (LpF)(void))
+void STK_voidSetIntervalPeriodic(u32 Copy_u32Time, void (*LpF)(void))
 {
     /* Set Load Value */
     STK_LOAD_Reg = Copy_u32Time;

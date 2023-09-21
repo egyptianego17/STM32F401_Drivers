@@ -1,12 +1,12 @@
 /*****************************************************/
-/*                SWC: EXTI Driver                   */
+/*                SWC: STP Driver                    */
 /*            Author: Abdulrahman Omar               */
 /*                 Version: v 1.0                    */
-/*             Date: 19 August - 2023                */
+/*             Date: 28 August - 2023                */
 /*****************************************************/
 
 /* File Gaurd */
-#ifndef EXTI_CONFIG_H
-#define EXTI_CONFIG_H
+#ifndef STP_CONFIG_H
+#define STP_CONFIG_H
 
 #endif
