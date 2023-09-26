@@ -112,7 +112,7 @@ void STK_voidDelay_ms(u32 Copy_u32Time)
     if (Copy_u32Time * 1000 % TICKS_OF_ONE_SECOND != 0)
     {
         /* Set Load Value for the partial millisecond delay */
-        STK_LOAD_Reg = (Copy_u32Time % TICKS_OF_ONE_SECOND) * TICKS_DIV_FACTOR;
+        STK_LOAD_Reg = (Copy_u32Time * 1000 % TICKS_OF_ONE_SECOND) * TICKS_DIV_FACTOR;
 
         /* Start Timer */
         SET_BIT(STK_CTRL_Reg, STK_CTRL_ENABLE);

@@ -365,6 +365,57 @@ void GPIO_voidSetPortValue(u8 Copy_u8Port, u16 Copy_u8PortValue)
 }
 
 
+void GPIO_voidSetPinAF(u8 Copy_u8Pin, u8 Copy_u8AFID)
+{
+    u8 Pin = GET_PIN(Copy_u8Pin);
+
+    if ((Copy_u8Pin > PC15) || (Copy_u8AFID > 15))
+    {
+        /* Do nothing */
+    }   
+    else
+    {
+        switch (GET_PORT(Copy_u8Pin))
+        {
+        case IOA:
+            if (Pin <= 7)
+            {
+                MODIFY_REGISTER_BITS(GPIOA->AFRL, Pin*4, Pin*4+3, Copy_u8AFID);
+            }
+            else
+            {
+                MODIFY_REGISTER_BITS(GPIOA->AFRH, (Pin % 8)*4 , (Pin % 8)*4 + 3, Copy_u8AFID);
+            }
+            break;
+
+        case IOB:
+            if (Pin <= 7)
+            {
+                MODIFY_REGISTER_BITS(GPIOB->AFRL, Pin*4, Pin*4+3, Copy_u8AFID);
+            }
+            else
+            {
+                MODIFY_REGISTER_BITS(GPIOB->AFRH, (Pin % 8)*4, (Pin % 8)*4 + 3, Copy_u8AFID);
+            }
+            break;
+
+        case IOC:
+            if (Pin <= 7)
+            {
+                MODIFY_REGISTER_BITS(GPIOC->AFRL, Pin*4, Pin*4+3, Copy_u8AFID);
+            }
+            else
+            {
+                MODIFY_REGISTER_BITS(GPIOC->AFRH, (Pin % 8)*4, (Pin % 8)*4 + 3, Copy_u8AFID);
+            }            
+            break;
+
+        default:
+            break;
+        }
+    }
+}
+
 /*****************************************************************************/
 /* Function Name: GPIO_u8GetPinValue                                         */
 /* i/p Arguments: u8 Copy_u8Pin Options (PA0 -> PC15)                        */

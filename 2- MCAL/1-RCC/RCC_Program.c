@@ -88,7 +88,7 @@ void RCC_voidInitSysClk(void)
 void RCC_voidEnablePeripheralClk(u8 Copy_u8BusId, u8 Copy_u8PeripheralId)
 {
     /* i/p validation */
-    if ((Copy_u8BusId > APB1) || (Copy_u8PeripheralId > 31))
+    if ((Copy_u8BusId > APB2) || (Copy_u8PeripheralId > 31))
     {
         /* Do nothing */
     }

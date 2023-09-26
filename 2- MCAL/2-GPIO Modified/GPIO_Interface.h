@@ -22,6 +22,7 @@ void GPIO_voidSetPinPUPD(u8 Copy_u8Pin, u8 Copy_u8PinPUPDOption);
 void GPIO_voidSetPinValue(u8 Copy_u8Pin, u8 Copy_u8PinValue);
 void GPIO_voidSetPinValueDirectAccess(u8 Copy_u8Pin, u8 Copy_u8PinValue);
 void GPIO_voidSetPortValue(u8 Copy_u8PortId, u16 Copy_u8PortValue);
+void GPIO_voidSetPinAF(u8 Copy_u8Pin, u8 Copy_u8AFID);
 u8   GPIO_u8GetPinValue(u8 Copy_u8Pin);
 
 /* GPIO Pins */
